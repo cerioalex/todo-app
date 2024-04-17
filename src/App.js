@@ -27,7 +27,6 @@ function App() {
       task: todo,
       date: date.toLocaleDateString(),
       completed: false,
-      isEditing: false,
     };
 
     setTodos((currentTodos) => {
