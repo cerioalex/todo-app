@@ -1,13 +1,94 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  background-color: #dbe2ef;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.header {
+  height: 300px;
+  width: 100%;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/milky-way.jpeg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Ensures the image stays behind the overlay */
+}
+
+.todo-wrapper {
+  position: fixed;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.todo-wrapper > h1 {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: #fff;
+}
+
+.todo-container {
+  background-color: #fff;
+  width: 620px;
+  padding: 30px 20px 1px 20px;
+  border-radius: 5px;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.input-form {
+  display: flex;
+  padding: 8px;
+}
+
+.no-tasks {
+  margin: 10px 10px 0px 10px;
+  padding: 10px 0px 0px 0px;
+  font-size: 14px;
+  color: grey;
+  font-weight: bold;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.bottom-container {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todos-length,
+.completed-items {
+  color: grey;
+  font-weight: bold;
+  font-size: 14px;
 }
